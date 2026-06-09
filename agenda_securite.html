@@ -17,7 +17,7 @@
     .tag-alamo      { background: #130a1a; color: #9b59b6; border: 1px solid #9b59b644; }
     .tag-ems        { background: #0a0f1a; color: #3498db; border: 1px solid #3498db44; }
     .tag-events     { background: #0a1520; color: #5dade2; border: 1px solid #5dade244; }
-    #calendar-desktop { padding: 20px 24px; }
+    #calendar-desktop { padding: 20px 24px; filter: invert(1) hue-rotate(180deg); }
     #calendar-desktop iframe { width: 100%; height: calc(100vh - 130px); border: none; border-radius: 6px; }
     #calendar-mobile { display: none; padding: 16px; }
     .agenda-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #555; margin: 20px 0 8px; }
@@ -49,12 +49,10 @@
     <span class="tag tag-events">🩵 Événements</span>
   </div>
 
-  <!-- DESKTOP -->
   <div id="calendar-desktop">
     <iframe src="https://calendar.google.com/calendar/embed?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED&hl=fr&bgcolor=%23000000" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <!-- MOBILE -->
   <div id="calendar-mobile">
     <p class="agenda-label">Agendas disponibles</p>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com" target="_blank">
