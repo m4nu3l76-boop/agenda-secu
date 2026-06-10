@@ -10,8 +10,9 @@
     header { background: #111; border-bottom: 2px solid #c0392b; padding: 16px 24px; display: flex; align-items: center; gap: 14px; }
     header .badge { background: #c0392b; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; }
     header h1 { font-size: 18px; font-weight: 600; color: #fff; letter-spacing: 1px; }
-    .tags { display: flex; gap: 8px; padding: 12px 24px; background: #111; border-bottom: 1px solid #222; flex-wrap: wrap; }
-    .tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; }
+    .tags { display: flex; gap: 8px; padding: 12px 24px; background: #111; border-bottom: 1px solid #222; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .tags::-webkit-scrollbar { display: none; }
+    .tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; flex-shrink: 0; }
     .tag-unicorn    { background: #1a0a0a; color: #e74c3c; border: 1px solid #e74c3c44; }
     .tag-protection { background: #1a1a1a; color: #aaaaaa; border: 1px solid #55555577; }
     .tag-alamo      { background: #130a1a; color: #9b59b6; border: 1px solid #9b59b644; }
@@ -34,6 +35,10 @@
     .cal-desc { font-size: 11px; color: #666; }
     .cal-arrow { font-size: 16px; color: #444; }
     .combined-link { display: block; text-align: center; background: #c0392b; color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 1px; padding: 14px; border-radius: 10px; text-decoration: none; margin-top: 20px; }
+    @media (max-width: 1023px) {
+      #calendar-desktop { display: none !important; }
+      #calendar-mobile  { display: block !important; }
+    }
   </style>
 </head>
 <body>
@@ -57,27 +62,27 @@
     <p class="agenda-label">Agendas disponibles</p>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-unicorn"></span>
-      <span class="cal-info"><div class="cal-name">🔴 Sécurité Unicorn</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🔴 Sécurité Unicorn</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-protection"></span>
-      <span class="cal-info"><div class="cal-name">👑 Protection Rapprochée</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">👑 Protection Rapprochée</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-alamo"></span>
-      <span class="cal-info"><div class="cal-name">🟣 Sécurité Alamo</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🟣 Sécurité Alamo</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-ems"></span>
-      <span class="cal-info"><div class="cal-name">🔵 Sécurité EMS</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🔵 Sécurité EMS</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-events"></span>
-      <span class="cal-info"><div class="cal-name">🩵 Sécurité Événements</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🩵 Sécurité Événements</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="combined-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com&cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com&cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com&cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com&cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
@@ -86,11 +91,13 @@
   </div>
 
   <script>
-    var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent) || window.innerWidth < 1024;
-    if (isMobile) {
-      document.getElementById('calendar-desktop').style.display = 'none';
-      document.getElementById('calendar-mobile').style.display = 'block';
+    function applyLayout() {
+      var isMobile = window.matchMedia('(max-width: 1023px)').matches;
+      document.getElementById('calendar-desktop').style.display = isMobile ? 'none' : 'block';
+      document.getElementById('calendar-mobile').style.display  = isMobile ? 'block' : 'none';
     }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
   </script>
 
 </body>
