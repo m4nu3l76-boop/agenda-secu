@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Sécurité — GTA RP Revolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Rajdhani', 'Segoe UI', sans-serif; font-size: 17px; font-weight: 600; min-height: 100vh; }
     header { background: #111; border-bottom: 2px solid #c0392b; padding: 16px 24px; display: flex; align-items: center; gap: 14px; }
-    header .badge { background: #c0392b; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; }
-    header h1 { font-size: 18px; font-weight: 600; color: #fff; letter-spacing: 1px; }
+    header .badge { background: #c0392b; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; }
+    header h1 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 1px; }
     .tags { display: flex; gap: 8px; padding: 12px 24px; background: #111; border-bottom: 1px solid #222; flex-wrap: wrap; }
-    .tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; }
+    .tag { font-size: 13px; padding: 4px 12px; border-radius: 20px; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
     .tag-unicorn    { background: #1a0a0a; color: #e74c3c; border: 1px solid #e74c3c44; }
     .tag-protection { background: #1a1a1a; color: #aaaaaa; border: 1px solid #55555577; }
     .tag-alamo      { background: #130a1a; color: #9b59b6; border: 1px solid #9b59b644; }
@@ -20,7 +21,7 @@
     #calendar-desktop { padding: 20px 24px; filter: invert(1) hue-rotate(180deg); }
     #calendar-desktop iframe { width: 100%; height: calc(100vh - 130px); border: none; border-radius: 6px; }
     #calendar-mobile { display: none; padding: 16px; }
-    .agenda-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #555; margin: 20px 0 8px; }
+    .agenda-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #555; margin: 20px 0 8px; }
     .agenda-label:first-child { margin-top: 0; }
     .cal-link { display: flex; align-items: center; gap: 12px; background: #161616; border: 1px solid #222; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; text-decoration: none; color: inherit; }
     .cal-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
@@ -30,10 +31,10 @@
     .dot-ems        { background: #3498db; }
     .dot-events     { background: #5dade2; }
     .cal-info { flex: 1; }
-    .cal-name { font-size: 14px; font-weight: 600; color: #f0f0f0; margin-bottom: 2px; }
-    .cal-desc { font-size: 11px; color: #666; }
-    .cal-arrow { font-size: 16px; color: #444; }
-    .combined-link { display: block; text-align: center; background: #c0392b; color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 1px; padding: 14px; border-radius: 10px; text-decoration: none; margin-top: 20px; }
+    .cal-name { font-size: 17px; font-weight: 700; color: #f0f0f0; margin-bottom: 2px; }
+    .cal-desc { font-size: 13px; color: #666; }
+    .cal-arrow { font-size: 18px; color: #444; }
+    .combined-link { display: block; text-align: center; background: #c0392b; color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; padding: 14px; border-radius: 10px; text-decoration: none; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -57,27 +58,27 @@
     <p class="agenda-label">Agendas disponibles</p>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-unicorn"></span>
-      <span class="cal-info"><div class="cal-name">🔴 Sécurité Unicorn</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🔴 Sécurité Unicorn</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-protection"></span>
-      <span class="cal-info"><div class="cal-name">👑 Protection Rapprochée</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">👑 Protection Rapprochée</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-alamo"></span>
-      <span class="cal-info"><div class="cal-name">🟣 Sécurité Alamo</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🟣 Sécurité Alamo</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-ems"></span>
-      <span class="cal-info"><div class="cal-name">🔵 Sécurité EMS</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🔵 Sécurité EMS</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
       <span class="cal-dot dot-events"></span>
-      <span class="cal-info"><div class="cal-name">🩵 Sécurité Événements</div><div class="cal-desc">Voir les événements</div></span>
+      <span class="cal-info"><div class="cal-name">🩵 Sécurité Événements</div><div class="cal-desc">Voir les événements ›</div></span>
       <span class="cal-arrow">›</span>
     </a>
     <a class="combined-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com&cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com&cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com&cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com&cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
