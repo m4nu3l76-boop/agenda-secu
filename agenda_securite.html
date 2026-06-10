@@ -20,6 +20,21 @@
     .tag-events     { background: #0a1520; color: #5dade2; border: 1px solid #5dade244; }
     #calendar-desktop { padding: 20px 24px; filter: invert(1) hue-rotate(180deg); }
     #calendar-desktop iframe { width: 100%; height: calc(100vh - 130px); border: none; border-radius: 6px; }
+    #calendar-mobile { display: none; padding: 16px; }
+    .agenda-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #555; margin: 20px 0 8px; }
+    .agenda-label:first-child { margin-top: 0; }
+    .cal-link { display: flex; align-items: center; gap: 12px; background: #161616; border: 1px solid #222; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; text-decoration: none; color: inherit; }
+    .cal-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .dot-unicorn    { background: #e74c3c; }
+    .dot-protection { background: #aaaaaa; }
+    .dot-alamo      { background: #9b59b6; }
+    .dot-ems        { background: #3498db; }
+    .dot-events     { background: #5dade2; }
+    .cal-info { flex: 1; }
+    .cal-name { font-size: 17px; font-weight: 700; color: #f0f0f0; margin-bottom: 2px; }
+    .cal-desc { font-size: 13px; color: #666; }
+    .cal-arrow { font-size: 18px; color: #444; }
+    .combined-link { display: block; text-align: center; background: #c0392b; color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; padding: 14px; border-radius: 10px; text-decoration: none; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -36,8 +51,48 @@
   </div>
 
   <div id="calendar-desktop">
-    <iframe src="https://calendar.google.com/calendar/embed?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED&hl=fr&bgcolor=%23000000" frameborder="0" scrolling="yes" allowfullscreen></iframe>
+    <iframe src="https://calendar.google.com/calendar/embed?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED&hl=fr&bgcolor=%23000000" frameborder="0" scrolling="no"></iframe>
   </div>
+
+  <div id="calendar-mobile">
+    <p class="agenda-label">Agendas disponibles</p>
+    <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com" target="_blank">
+      <span class="cal-dot dot-unicorn"></span>
+      <span class="cal-info"><div class="cal-name">🔴 Sécurité Unicorn</div><div class="cal-desc">Voir les événements ›</div></span>
+      <span class="cal-arrow">›</span>
+    </a>
+    <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com" target="_blank">
+      <span class="cal-dot dot-protection"></span>
+      <span class="cal-info"><div class="cal-name">👑 Protection Rapprochée</div><div class="cal-desc">Voir les événements ›</div></span>
+      <span class="cal-arrow">›</span>
+    </a>
+    <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com" target="_blank">
+      <span class="cal-dot dot-alamo"></span>
+      <span class="cal-info"><div class="cal-name">🟣 Sécurité Alamo</div><div class="cal-desc">Voir les événements ›</div></span>
+      <span class="cal-arrow">›</span>
+    </a>
+    <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com" target="_blank">
+      <span class="cal-dot dot-ems"></span>
+      <span class="cal-info"><div class="cal-name">🔵 Sécurité EMS</div><div class="cal-desc">Voir les événements ›</div></span>
+      <span class="cal-arrow">›</span>
+    </a>
+    <a class="cal-link" href="https://calendar.google.com/calendar/r?cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
+      <span class="cal-dot dot-events"></span>
+      <span class="cal-info"><div class="cal-name">🩵 Sécurité Événements</div><div class="cal-desc">Voir les événements ›</div></span>
+      <span class="cal-arrow">›</span>
+    </a>
+    <a class="combined-link" href="https://calendar.google.com/calendar/r?cid=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37@group.calendar.google.com&cid=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d@group.calendar.google.com&cid=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf@group.calendar.google.com&cid=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf@group.calendar.google.com&cid=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee@group.calendar.google.com" target="_blank">
+      + Ajouter tous les agendas
+    </a>
+  </div>
+
+  <script>
+    var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent) || window.innerWidth < 1024;
+    if (isMobile) {
+      document.getElementById('calendar-desktop').style.display = 'none';
+      document.getElementById('calendar-mobile').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
