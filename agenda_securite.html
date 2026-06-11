@@ -5,34 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Sécurité — GTA RP Revolution</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
-    header { background: #111; border-bottom: 2px solid #c0392b; padding: 16px 24px; display: flex; align-items: center; gap: 14px; }
-    header .badge { background: #c0392b; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; }
-    header h1 { font-size: 18px; font-weight: 600; color: #fff; letter-spacing: 1px; }
-    .tags { display: flex; gap: 8px; padding: 12px 24px; background: #111; border-bottom: 1px solid #222; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg:          #0d0d0d;
+      --surface:     #111111;
+      --border:      #222222;
+      --accent:      #c0392b;
+      --text:        #e0e0e0;
+
+      --header-h:    54px;
+      --tags-h:      45px;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    header {
+      height: var(--header-h);
+      background: var(--surface);
+      border-bottom: 2px solid var(--accent);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    header h1 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.8px;
+    }
+
+    .tags {
+      height: var(--tags-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex-shrink: 0;
+    }
+
     .tags::-webkit-scrollbar { display: none; }
-    .tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; flex-shrink: 0; }
-    .tag-unicorn    { background: #1a0a0a; color: #e74c3c; border: 1px solid #e74c3c44; }
-    .tag-protection { background: #1a1a1a; color: #aaaaaa; border: 1px solid #55555577; }
-    .tag-alamo      { background: #130a1a; color: #9b59b6; border: 1px solid #9b59b644; }
-    .tag-ems        { background: #0a0f1a; color: #3498db; border: 1px solid #3498db44; }
-    .tag-events     { background: #0a1520; color: #5dade2; border: 1px solid #5dade244; }
-    #calendar-desktop { padding: 20px 24px; filter: invert(1) hue-rotate(180deg); }
-    #calendar-desktop iframe { width: 100%; height: calc(100vh - 130px); border: none; border-radius: 6px; }
-    #calendar-mobile { display: none; padding: 8px; }
-    #calendar-mobile iframe { width: 100%; height: calc(100vh - 120px); border: none; border-radius: 6px; filter: invert(1) hue-rotate(180deg); }
-    @media (max-width: 1023px) {
-      #calendar-desktop { display: none !important; }
-      #calendar-mobile  { display: block !important; }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tag-unicorn    { background: #1a0a0a; color: #e74c3c; border: 1px solid rgba(231, 76,  60,  0.27); }
+    .tag-protection { background: #1a1a1a; color: #aaaaaa; border: 1px solid rgba(170, 170, 170, 0.27); }
+    .tag-alamo      { background: #130a1a; color: #9b59b6; border: 1px solid rgba(155, 89,  182, 0.27); }
+    .tag-ems        { background: #0a0f1a; color: #3498db; border: 1px solid rgba(52,  152, 219, 0.27); }
+    .tag-events     { background: #0a1520; color: #5dade2; border: 1px solid rgba(93,  173, 226, 0.27); }
+
+    .calendar-wrap {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .calendar-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      filter: invert(1) hue-rotate(180deg);
     }
   </style>
 </head>
 <body>
+
   <header>
     <span class="badge">GTA RP Revolution</span>
     <h1>Agenda Sécurité</h1>
   </header>
+
   <div class="tags">
     <span class="tag tag-unicorn">🔴 Unicorn</span>
     <span class="tag tag-protection">👑 Protection Rapprochée</span>
@@ -41,22 +126,44 @@
     <span class="tag tag-events">🩵 Événements</span>
   </div>
 
-  <div id="calendar-desktop">
-    <iframe src="https://calendar.google.com/calendar/embed?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED&hl=fr&bgcolor=%23000000" frameborder="0" scrolling="no"></iframe>
-  </div>
-
-  <div id="calendar-mobile">
-    <iframe src="https://calendar.google.com/calendar/embed?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED&hl=fr&bgcolor=%23000000&mode=AGENDA" frameborder="0" scrolling="yes"></iframe>
+  <div class="calendar-wrap">
+    <iframe
+      id="cal"
+      src=""
+      frameborder="0"
+      scrolling="no"
+      title="Agenda Sécurité GTA RP Revolution"
+    ></iframe>
   </div>
 
   <script>
-    function applyLayout() {
-      var isMobile = window.matchMedia('(max-width: 1023px)').matches;
-      document.getElementById('calendar-desktop').style.display = isMobile ? 'none' : 'block';
-      document.getElementById('calendar-mobile').style.display  = isMobile ? 'block' : 'none';
-    }
-    applyLayout();
-    window.addEventListener('resize', applyLayout);
+    (function () {
+      var BASE =
+        'https://calendar.google.com/calendar/embed' +
+        '?src=af5dbfac9d456112b676fe1ece76e5463b81a52c156961ac1b204fad96e23b37%40group.calendar.google.com&color=%23E67C73' +
+        '&src=6aaca03c36d5ad0851ff5fbf3f4bdf21acbb0347f0e43e92fc8495f624c4708d%40group.calendar.google.com&color=%23616161' +
+        '&src=06a111972b9db0efa23bb81f74cd1b06dade5aa350a28fec7ccc302e110b85bf%40group.calendar.google.com&color=%238E24AA' +
+        '&src=a6c87906927059e286fad850f197178554e2d9d85976c309826a2f644396d3bf%40group.calendar.google.com&color=%234285F4' +
+        '&src=3cd6b4cd6b26efc08b40ab26fd4605566c9d5ab791f570139a986e5386fc90ee%40group.calendar.google.com&color=%2339A0ED' +
+        '&hl=fr&bgcolor=%23000000';
+
+      var iframe = document.getElementById('cal');
+
+      function setMode() {
+        var mobile = window.matchMedia('(max-width: 1023px)').matches;
+        iframe.scrolling = mobile ? 'yes' : 'no';
+        iframe.src = BASE + (mobile ? '&mode=AGENDA' : '');
+      }
+
+      setMode();
+
+      var mq = window.matchMedia('(max-width: 1023px)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', setMode);
+      } else {
+        mq.addListener(setMode);
+      }
+    })();
   </script>
 
 </body>
